@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/companiesScreen">
+
+    <fragment
+        android:id="@+id/companiesScreen"
+        android:name="ru.grandibambino.testforlifehackstudio.presentation.fragments.CompaniesScreen"
+        android:label="fragment_companies_screen"
+        tools:layout="@layout/fragment_companies_screen" >
+        <action
+            android:id="@+id/action_companiesScreen_to_companyDescriptionScreen"
+            app:destination="@id/companyDescriptionScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/companyDescriptionScreen"
+        android:name="ru.grandibambino.testforlifehackstudio.presentation.fragments.CompanyDescriptionScreen"
+        android:label="fragment_company_description_screen"
+        tools:layout="@layout/fragment_company_description_screen" >
+        <action
+            android:id="@+id/action_companyDescriptionScreen_to_companiesScreen"
+            app:destination="@id/companiesScreen"
+            app:popUpTo="@id/companiesScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

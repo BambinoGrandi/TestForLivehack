@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Test for lifehack studio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="company_logo_description_image">company_logo</string>
+
+    <string name="lat">Широта %1$s</string>
+    <string name="lon">Долгота %1$s</string>
+    <string name="site">Сайт %1$s</string>
+    <string name="phone">Телефон %1$s</string>
+    <string name="error_placeholder">Ошибка загрузки компании</string>
+    <string name="error_load">Ошибка загрузки компании</string>
+</resources>

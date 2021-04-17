@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="default_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:layout_marginTop">@dimen/default_vertical_margin</item>
+    </style>
+
+    <style name="default_image_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/image_company_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.CompanyDescriptionScreen">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingStart="@dimen/default_horizontal_margin"
+            android:paddingTop="@dimen/default_vertical_margin"
+            android:paddingEnd="@dimen/default_horizontal_margin"
+            android:paddingBottom="@dimen/default_vertical_margin">
+
+            <TextView
+                android:id="@+id/name_company"
+                style="@style/default_text_view"
+                android:layout_marginBottom="@dimen/default_vertical_margin"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/photo_company"
+                style="@style/default_image_view"
+                android:contentDescription="@string/company_logo_description_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_company" />
+
+            <TextView
+                android:id="@+id/description_company"
+                style="@style/default_text_view"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/photo_company" />
+
+            <TextView
+                android:id="@+id/lat_company"
+                style="@style/default_text_view"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_company" />
+
+            <TextView
+                android:id="@+id/lon_company"
+                style="@style/default_text_view"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lat_company" />
+
+            <TextView
+                android:id="@+id/site_company"
+                style="@style/default_text_view"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lon_company" />
+
+            <TextView
+                android:id="@+id/phone_company"
+                style="@style/default_text_view"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/site_company" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
