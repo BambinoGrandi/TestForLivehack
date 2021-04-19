@@ -12,6 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import ru.grandibambino.testforlifehackstudio.domain.Repository
 import ru.grandibambino.testforlifehackstudio.domain.network.Api
 import ru.grandibambino.testforlifehackstudio.presentation.CompaniesViewModel
+import ru.grandibambino.testforlifehackstudio.presentation.CompanyAdapter
 import ru.grandibambino.testforlifehackstudio.presentation.CompanyDescriptionViewModel
 import ru.grandibambino.testforlifehackstudio.repository.RepositoryImpl
 import ru.grandibambino.testforlifehackstudio.utils.*
@@ -55,6 +56,7 @@ val appModules = module {
     single(named(RETROFIT)) { getRetrofit(get(named(OK_HTTPCLIENT))) }
     single(named(API_SERVICE)) { getApi(get(named(RETROFIT))) }
     single<Repository> { RepositoryImpl(get(named(API_SERVICE))) }
+    factory { CompanyAdapter(get()) }
     factory<ImageLoader> { ImageLoaderImpl() }
 }
 
