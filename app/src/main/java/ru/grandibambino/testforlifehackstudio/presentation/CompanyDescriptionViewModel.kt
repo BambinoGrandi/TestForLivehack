@@ -17,9 +17,11 @@ class CompanyDescriptionViewModel(private val repository: Repository) : ViewMode
     private var _currentCompany: Company? = null
 
     private val companyCoroutineScope =
-        CoroutineScope(Dispatchers.IO + SupervisorJob() + CoroutineExceptionHandler { _, throwable ->
-            handlerError(throwable)
-        })
+            CoroutineScope(Dispatchers.IO +
+                    SupervisorJob() +
+                    CoroutineExceptionHandler { _, throwable ->
+                        handlerError(throwable)
+                    })
 
     fun setCompany(company: Company?) = company.also { _currentCompany = it }
 

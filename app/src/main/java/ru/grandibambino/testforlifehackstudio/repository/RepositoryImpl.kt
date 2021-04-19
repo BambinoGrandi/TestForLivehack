@@ -1,5 +1,6 @@
 package ru.grandibambino.testforlifehackstudio.repository
 
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import ru.grandibambino.testforlifehackstudio.domain.Repository
 import ru.grandibambino.testforlifehackstudio.domain.data.Company

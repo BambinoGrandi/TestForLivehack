@@ -16,10 +16,9 @@ import ru.grandibambino.testforlifehackstudio.utils.image.ImageLoader
 class CompaniesScreen : BaseFragment(R.layout.fragment_companies_screen) {
 
     private lateinit var companiesRV: RecyclerView
-    private var adapter: CompanyAdapter? = null
 
     private val viewModel by viewModel<CompaniesViewModel>()
-    private val imageLoader by inject<ImageLoader>()
+    private val adapter by inject<CompanyAdapter>()
 
     override fun onStart() {
         super.onStart()
@@ -49,9 +48,8 @@ class CompaniesScreen : BaseFragment(R.layout.fragment_companies_screen) {
         }
     }
 
-    private fun initAdapter(data: MutableList<Company>) {
+    private fun initAdapter() {
         companiesRV = viewRoot.findViewById(R.id.companies_rv) as RecyclerView
-        adapter = CompanyAdapter(data, imageLoader, itemClick)
         companiesRV.layoutManager =
             LinearLayoutManager(context?.applicationContext, LinearLayoutManager.VERTICAL, false)
         companiesRV.setHasFixedSize(true)
@@ -59,6 +57,7 @@ class CompaniesScreen : BaseFragment(R.layout.fragment_companies_screen) {
     }
 
     private fun renderData(data: MutableList<Company>) {
-        initAdapter(data)
+        initAdapter()
+        adapter.setData(data, itemClick)
     }
 }

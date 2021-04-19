@@ -11,10 +11,19 @@ import ru.grandibambino.testforlifehackstudio.domain.data.Company
 import ru.grandibambino.testforlifehackstudio.utils.image.ImageLoader
 
 class CompanyAdapter(
-    private var data: MutableList<Company>,
+//    private var data: MutableList<Company>,
     private val imageLoader: ImageLoader,
-    private val itemClickListener: ItemClickListener
+//    private val itemClickListener: ItemClickListener
     ) : RecyclerView.Adapter<CompanyAdapter.CompanyViewHolder>() {
+
+    private var data = mutableListOf<Company>()
+    private var itemClickListener: ItemClickListener? = null
+
+    fun setData(data: MutableList<Company>,itemClickListener: ItemClickListener) {
+        this.data = data
+        this.itemClickListener = itemClickListener
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CompanyViewHolder {
         return CompanyViewHolder(
@@ -25,7 +34,7 @@ class CompanyAdapter(
 
     override fun onBindViewHolder(holder: CompanyViewHolder, position: Int) {
         holder.bind(data[position], imageLoader)
-        holder.itemClick(itemClickListener, data[position])
+        itemClickListener?.let { holder.itemClick(it, data[position]) }
     }
 
     override fun getItemCount() = data.size
